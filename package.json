@@ -1,0 +1,14 @@
+{
+  "name": "p5test",
+  "version": "0.0.1",
+  "description": "Test project for the p5.js library",
+  "main": "p5test.hta",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Delaney, Alan",
+  "license": "MIT",
+  "dependencies": {
+    "p5": "^0.5.6"
+  }
+}

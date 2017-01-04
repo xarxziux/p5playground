@@ -1,0 +1,29 @@
+# git ls-files --others --exclude-from=.git/info/exclude
+# Lines that start with '#' are comments.
+
+# Exclude local and non-code directories
+/data/
+/testing/
+/archive/
+npm-debug.log
+
+# Exclude various backup temp and local files
+/versions.ini
+*.bak
+*.test.js
+
+# Exclude Eclipse files
+/.project
+/.settings/
+/.metadata/
+/.externalToolBuilders/
+
+# Exclude node.js modules
+/node_modules/
+
+# Exclude intermediate workflow files...
+/src/*
+# ... but keep original, unprocessed source files
+!/src/0_base/
+!/src/modules/
+
