@@ -1,30 +1,37 @@
-var x;
-var y;
+var x = 0;
+var y = 0;
+var oldx = 0;
+var oldy = 0;
+
 const circleSize = 1;
-const maxJump = 5;
+const maxJump = 15;
+const scrWidth = 640;
+const scrHeight = 480
+const speed = 60;
 
 function setup() {
     
-    createCanvas(640, 480);
-    x = width/2;
-    y = height/2;
+    createCanvas (scrWidth, scrHeight);
+    x = scrWidth/2;
+    y = scrHeight/2;
     
-    // frameRate (60);
+    frameRate (speed);
 }
 
 function draw() {
     
-    // background (0);
     stroke(50);
-    fill(100);
-    ellipse (x, y, circleSize, circleSize);
     
+    oldx = x;
+    oldy = y;
     x = x + random (-maxJump, maxJump);
     y = y + random (-maxJump, maxJump);
     
-    if (x < 0) x = 0;
-    if (y < 0) y = 0;
-    if (x > width) x = width;
-    if (y > height) y = height;
+    if (x < 0) x = -x;
+    if (y < 0) y = -y;
+    if (x > scrWidth) x = (scrWidth * 2) - x;
+    if (y > scrHeight) y = (scrHeight * 2) - y;
+    
+    line (x, y, oldx, oldy)
     
 }

@@ -2,8 +2,8 @@ const RADIUS = 80;
 const PADDING = 20;
 const WINDOWCENTRE = RADIUS + PADDING;
 const ANGLEINC = 4;
-const SHADOWCOUNT = 10;
-const SPEED = 10;
+const SHADOWCOUNT = 15;
+const SPEED = 20;
 var angle = 0;
 
 function setup() {

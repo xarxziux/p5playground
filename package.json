@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "description": "Test project for the p5.js library",
   "repository": "https://github.com/xarxziux/p5playground.git",
-  "main": "brownian.html",
+  "main": "index.html",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
