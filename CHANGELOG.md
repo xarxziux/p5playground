@@ -1,5 +1,10 @@
 # p5 Playground Change Log
 
+## 05-Jan-2017
+
+### Added
+- Animated radar webpage and script.
+
 ## 04-Jan-2017
 
 ### Added
