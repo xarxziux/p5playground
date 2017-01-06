@@ -1,5 +1,10 @@
 # p5 Playground Change Log
 
+## 06-Jan-2017
+
+### Added
+- Added fading lines animation.
+
 ## 05-Jan-2017
 
 ### Changed
