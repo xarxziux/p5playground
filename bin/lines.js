@@ -11,12 +11,19 @@
 
 const maxJump = 5;
 const scrWidth = 640;
-const scrHeight = 480
+const scrHeight = 480;
+const initWidth = 40;
 const speed = 5;
 const shadow = 10;
 
-let arr1 = [{x: scrWidth/2, y: scrHeight/2}];
-let arr2 = [{x: scrWidth/2, y: scrHeight/2}];
+let lineArr = [{
+    
+    x1: ((scrWidth * 2) - initWidth)/4,
+    y1: scrHeight/2,
+    x2: ((scrWidth * 2) + initWidth)/4,
+    y2: scrHeight/2
+    
+}];
 
 function setup() {
     
@@ -29,9 +36,8 @@ function draw() {
     
     background (255);
     
-    arr1 = newHead (arr1);
-    arr2 = newHead (arr2);
-    drawLines (arr1, arr2);
+    lineArr = newHead (lineArr);
+    drawLines (lineArr);
     
 }
 
@@ -39,8 +45,10 @@ function newHead (arr) {
     
     const head = [{
         
-        x: arr[0].x + random (-maxJump, maxJump),
-        y: arr[0].y + random (-maxJump, maxJump),
+        x1: randomJump (arr[0].x1, scrWidth),
+        y1: randomJump (arr[0].y1, scrHeight),
+        x2: randomJump (arr[0].x2, scrWidth),
+        y2: randomJump (arr[0].y2, scrHeight)
         
     }];
     
@@ -48,21 +56,29 @@ function newHead (arr) {
     
 }
 
-function drawLines (a1, a2) {
-    
-    /*
-    console.log ('arr1 = ' + JSON.stringify (a1));
-    console.log ('arr2 = ' + JSON.stringify (a2));
-    console.log ('a1 [0]')
-    */
+function drawLines (arr) {
     
     let i = 0;
     
-    while (i < a1.length) {
+    while (i < arr.length) {
         
         stroke ((255 * i)/shadow);
-        line (a1 [i].x, a1 [i].y, a2 [i].x, a2 [i].y);
+        line (arr [i].x1, arr [i].y1, arr [i].x2, arr [i].y2);
         i++;
         
     }
+}
+
+function randomJump (x, max) {
+    
+    return boundary (x + random (-maxJump, maxJump), 0, max);
+    
+}
+
+function boundary (x, lower, upper) {
+    
+    if (x < lower) return (lower * 2) - x;
+    if (x > upper) return (upper * 2) - x;
+    return x;
+    
 }
