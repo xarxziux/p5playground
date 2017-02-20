@@ -8,12 +8,12 @@
     
 */
 
-const scrWidth = 640;
+const scrWidth = 1400;
 const scrHeight = 800;
-const blockSize = 10;
+const blockSize = 6;
 const maxGenerations = Math.floor (scrHeight/blockSize);
 const wingSize = getWingSize (scrWidth, blockSize);
-const wolframKey = 73;
+const wolframKey = 30;
 const padding = 2;
 
 function getWingSize (width, block) {
@@ -100,7 +100,6 @@ function draw() {
                         blockSize - padding
                         
                 );
-                
             }
             
             i++;

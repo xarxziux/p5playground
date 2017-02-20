@@ -1,35 +1,46 @@
-const RADIUS = 80;
-const PADDING = 20;
-const WINDOWCENTRE = RADIUS + PADDING;
-const ANGLEINC = 4;
-const SHADOWCOUNT = 15;
-const SPEED = 20;
-var angle = 0;
+const radius = 80;
+const padding = 20;
+const windowCentre = radius + padding;
+const angleInc = 4;
+const shadowCount = 15;
+const speed = 20;
+let angle = 0;
+
 
 function setup() {
     
-    createCanvas (WINDOWCENTRE * 2, WINDOWCENTRE * 2);
-    frameRate (SPEED);
+    createCanvas (windowCentre * 2, windowCentre * 2);
+    frameRate (speed);
     angleMode (DEGREES);
     
 }
+
 
 function draw() {
     
     background (0);
     
-    for (let i = 0; i < SHADOWCOUNT; i++) {
+    for (let i = 0; i < shadowCount; i++) {
         
-        line (WINDOWCENTRE, WINDOWCENTRE,
-                WINDOWCENTRE + (RADIUS * cos (angle - (ANGLEINC * i))),
-                WINDOWCENTRE + (RADIUS * sin (angle - (ANGLEINC * i))));
-        stroke ((255 * (SHADOWCOUNT - i))/SHADOWCOUNT);
+        line (windowCentre, windowCentre,
+                windowCentre + (radius * cos (angle - (angleInc * i))),
+                windowCentre + (radius * sin (angle - (angleInc * i))));
+        stroke ((255 * (shadowCount - i))/shadowCount);
         
     }
     
-    angle = angle + ANGLEINC;
+    angle = angle + angleInc;
     angle = angle % 360;
     console.log ('angle = ' + angle + ', sine = ' + sin (angle) + 
             ', cosine = ' + cos (angle));
     
 }
+
+
+window.sayHello = function  () {
+    
+    const helloBox = document.getElementById ('hello');
+    helloBox.innerHTML = 'Hello World';
+    
+};
+
